@@ -12,7 +12,17 @@ void main() {
       ),
     ),
   );*/
-  runApp(const MyDemo());
+  //runApp(const MyDemo());
+
+  //runApp是入口函数
+  runApp(
+    const Center(
+      child: Text(
+        'Hello, world!',
+        textDirection: TextDirection.ltr,
+      ),
+    ),
+  );
 }
 
 var stars = Row(
@@ -27,27 +37,27 @@ var stars = Row(
 );
 
 class MyDemo extends StatelessWidget {
-  // const MyDemo({super.key});
-  //
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'Flutter layout demo',
-  //     home: Scaffold(
-  //       appBar: AppBar(
-  //         title: const Text('Flutter layout demo'),
-  //       ),
-  //       body: const Center(
-  //         child: Text('Hello World'),
-  //       ),
-  //     ),
-  //   );
-  // }
-
   const MyDemo({super.key});
 
-
   @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter layout demo'),
+        ),
+        body: const Center(
+          child: Text('Hello World'),
+        ),
+      ),
+    );
+  }
+
+  //const MyDemo({super.key});
+
+
+/*  @override
   Widget build(BuildContext context) {
     return Container(
         decoration: const BoxDecoration(color: Colors.white),
@@ -62,7 +72,7 @@ class MyDemo extends StatelessWidget {
           ),
         ),
     );
-  }
+  }*/
 }
 
 class MyApp extends StatelessWidget {
@@ -168,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   .textTheme
                   .headlineMedium,
             ),
-            Text('A random AWESOME idea:'),
+            const Text('A random AWESOME idea:'),
             Text(appState.current.asLowerCase),
             ElevatedButton(onPressed: () {
               print('button pressed!');
@@ -186,6 +196,8 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class MyHomePage2 extends StatelessWidget {
+  const MyHomePage2({super.key});
+
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
@@ -203,7 +215,7 @@ class MyHomePage2 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Row(
               mainAxisSize: MainAxisSize.min, // ← Add this.
               children: [
@@ -212,15 +224,15 @@ class MyHomePage2 extends StatelessWidget {
                     appState.toggleFavorite();
                   },
                   icon: Icon(icon),
-                  label: Text('Like'),
+                  label: const Text('Like'),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
 
                 ElevatedButton(
                   onPressed: () {
                     appState.getNext();
                   },
-                  child: Text('Next'),
+                  child: const Text('Next'),
                 ),
               ],
             ),
@@ -235,16 +247,18 @@ class MyHomePage3 extends StatelessWidget {
 
   var selectedIndex = 0;
 
+  MyHomePage3({super.key});
+
 
   @override
   Widget build(BuildContext context) {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = GeneratorPage();
+        page = const GeneratorPage();
         break;
       case 1:
-        page = FavoritesPage();
+        page = const FavoritesPage();
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -288,6 +302,8 @@ class MyHomePage3 extends StatelessWidget {
 }
 
 class GeneratorPage extends StatelessWidget {
+  const GeneratorPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
@@ -304,7 +320,7 @@ class GeneratorPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -313,14 +329,14 @@ class GeneratorPage extends StatelessWidget {
                   appState.toggleFavorite();
                 },
                 icon: Icon(icon),
-                label: Text('Like'),
+                label: const Text('Like'),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               ElevatedButton(
                 onPressed: () {
                   appState.getNext();
                 },
-                child: Text('Next'),
+                child: const Text('Next'),
               ),
             ],
           ),
@@ -353,12 +369,14 @@ class MyAppState extends ChangeNotifier {
 
 
 class FavoritesPage extends StatelessWidget {
+  const FavoritesPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
 
     if (appState.favorites.isEmpty) {
-      return Center(
+      return const Center(
         child: Text('No favorites yet.'),
       );
     }
@@ -372,7 +390,7 @@ class FavoritesPage extends StatelessWidget {
         ),
         for (var pair in appState.favorites)
           ListTile(
-            leading: Icon(Icons.favorite),
+            leading: const Icon(Icons.favorite),
             title: Text(pair.asLowerCase),
           ),
       ],

@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+// import 'package:go_router/go_router.dart';
 
-void main() => runApp(MaterialApp.router(routerConfig: router));
+//void main() => runApp(MaterialApp.router(routerConfig: router));
 
 /// This handles '/' and '/details'.
+/*
 final router = GoRouter(
   routes: [
     GoRoute(
@@ -21,4 +21,4 @@ final router = GoRouter(
       ],
     ),
   ],
-);
+);*/
