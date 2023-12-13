@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget _buildList() {
+  return listView2;
   return ListView(
     children: [
       _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
@@ -18,6 +19,24 @@ Widget _buildList() {
     ],
   );
 }
+
+
+Widget listView2 = ListView(
+  children: const <Widget>[
+    ListTile(
+      leading: Icon(Icons.map),
+      title: Text('Map'),
+    ),
+    ListTile(
+      leading: Icon(Icons.photo_album),
+      title: Text('Album'),
+    ),
+    ListTile(
+      leading: Icon(Icons.phone),
+      title: Text('Phone'),
+    ),
+  ],
+);
 
 ListTile _tile(String title, String subtitle, IconData icon) {
   return ListTile(

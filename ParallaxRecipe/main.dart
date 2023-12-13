@@ -3,7 +3,7 @@ import 'package:english_words/english_words.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  //runApp(const MyApp2());
+  runApp(const MyApp2());
 /*  runApp(
     const Center(
       child: Text(
@@ -15,14 +15,14 @@ void main() {
   //runApp(const MyDemo());
 
   //runApp是入口函数
-  runApp(
+/*  runApp(
     const Center(
       child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
       ),
     ),
-  );
+  );*/
 }
 
 var stars = Row(
@@ -53,8 +53,6 @@ class MyDemo extends StatelessWidget {
       ),
     );
   }
-
-  //const MyDemo({super.key});
 
 
 /*  @override

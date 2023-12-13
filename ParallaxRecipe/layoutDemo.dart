@@ -8,8 +8,8 @@ Widget titleSection = Container(
     children: [
       Expanded(
         /*1*/
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column( //Creates a vertical array of children
+          crossAxisAlignment: CrossAxisAlignment.start,//水平方向children左对齐
           children: [
             /*2*/
             Container(
@@ -74,14 +74,13 @@ Widget textSection = const Padding(
         'half-hour walk through pastures and pine forest, leads you to the '
         'lake, which warms to 20 degrees Celsius in the summer. Activities '
         'enjoyed here include rowing, and riding the summer toboggan run.',
-    softWrap: true,
+    softWrap: true, //By setting softwrap to true, text lines will fill the column width before wrapping at a word boundary.
   ),
 );
 
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -101,9 +100,6 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Flutter layout demo'),
         ),
-        // body: const Center(
-        //   child: Text('Hello World'),
-        // ),
         body: ListView(
           children: [
             Image.asset(
@@ -136,7 +132,7 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.min,//占尽可能少的空间
       children: [
         Container(
           padding: const EdgeInsets.all(0),
